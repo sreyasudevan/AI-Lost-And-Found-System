@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-danger text-white text-center py-4">
+
+                    <h2>
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        Report Lost Item
+                    </h2>
+
+                    <p class="mb-0">
+                        Fill in the details to help us find your item.
+                    </p>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    <form method="POST" enctype="multipart/form-data">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Enter your name"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Contact Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="contact"
+                                    class="form-control"
+                                    placeholder="9876543210"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <br>
+
+                        <label class="form-label">
+                            Item Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="item"
+                            class="form-control"
+                            placeholder="Eg: Black Wallet"
+                            required>
+
+                        <br>
+
+                        <label class="form-label">
+                            Description
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            rows="4"
+                            name="description"
+                            placeholder="Colour, brand, stickers, special marks..."
+                            required></textarea>
+
+                        <br>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Lost Location
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="location"
+                                    class="form-control"
+                                    placeholder="Library">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Date Lost
+                                </label>
+
+                                <input
+                                    type="date"
+                                    name="date"
+                                    class="form-control">
+
+                            </div>
+
+                        </div>
+
+                        <br>
+
+                        <label class="form-label">
+
+                            Upload Item Image
+
+                        </label>
+
+                        <input
+                            type="file"
+                            id="imageInput"
+                            name="image"
+                            class="form-control">
+
+                        <br>
+
+                        <img
+                            id="preview"
+                            style="display:none;
+                                   width:250px;
+                                   border-radius:15px;
+                                   margin:auto;
+                                   box-shadow:0 5px 20px rgba(0,0,0,.2);">
+
+                        <br>
+
+                        <button
+                            class="btn btn-danger btn-lg w-100">
+
+                            Submit Lost Report
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

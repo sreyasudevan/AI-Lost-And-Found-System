@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-8">
+
+<div class="card shadow-lg border-0 rounded-4">
+
+<div class="card-header bg-success text-white text-center py-4">
+
+<h2>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Submit Found Item
+
+</h2>
+
+<p>
+
+Help someone recover their belongings.
+
+</p>
+
+</div>
+
+<div class="card-body p-5">
+
+<form method="POST"
+
+enctype="multipart/form-data">
+
+<label class="form-label">
+
+Item Name
+
+</label>
+
+<input
+class="form-control"
+type="text"
+name="item"
+required>
+
+<br>
+
+<label class="form-label">
+
+Description
+
+</label>
+
+<textarea
+
+class="form-control"
+
+rows="4"
+
+name="description"
+
+required>
+
+</textarea>
+
+<br>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<label>
+
+Location Found
+
+</label>
+
+<input
+
+class="form-control"
+
+type="text"
+
+name="location">
+
+</div>
+
+<div class="col-md-6">
+
+<label>
+
+Date
+
+</label>
+
+<input
+
+class="form-control"
+
+type="date"
+
+name="date">
+
+</div>
+
+</div>
+
+<br>
+
+<label>
+
+Your Contact
+
+</label>
+
+<input
+
+class="form-control"
+
+type="text"
+
+name="contact">
+
+<br>
+
+<label>
+
+Upload Image
+
+</label>
+
+<input
+
+id="imageInput"
+
+class="form-control"
+
+type="file"
+
+name="image">
+
+<br>
+
+<img
+
+id="preview"
+
+style="display:none;
+width:250px;
+margin:auto;
+border-radius:15px;">
+
+<br>
+
+<button
+
+class="btn btn-success btn-lg w-100">
+
+Submit Found Item
+
+</button>
+
+</form>
+
+{% if match %}
+
+<hr>
+
+<div class="alert alert-success mt-4">
+
+<h3>
+
+🤖 AI Match Found!
+
+</h3>
+
+<p>
+
+<b>Similarity Score:</b>
+
+{{ score }}%
+
+</p>
+
+<div class="progress">
+
+<div
+
+class="progress-bar"
+
+style="width:{{score}}%">
+
+{{score}}%
+
+</div>
+
+</div>
+
+<br>
+
+<h5>
+
+Owner Details
+
+</h5>
+
+<p>
+
+<b>Name:</b>
+
+{{match[1]}}
+
+</p>
+
+<p>
+
+<b>Contact:</b>
+
+{{match[2]}}
+
+</p>
+
+<p>
+
+<b>Item:</b>
+
+{{match[3]}}
+
+</p>
+
+<p>
+
+<b>Location:</b>
+
+{{match[5]}}
+
+</p>
+
+{% if match[7] %}
+
+<img
+
+src="{{url_for('static',filename='uploads/'+match[7])}}"
+
+class="img-fluid rounded shadow"
+
+style="max-width:250px;">
+
+{% endif %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

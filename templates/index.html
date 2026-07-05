@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            AI Lost & Found Management System
+        </h1>
+
+        <p class="mt-3">
+
+            Lost something valuable? Found an item that belongs to someone else?
+
+            AI Lost & Found provides a simple and secure platform to report, search
+            and reconnect owners with their belongings quickly and efficiently.
+
+        </p>
+
+        <div class="mt-4">
+
+            <a href="/lost" class="btn btn-danger btn-lg me-3">
+
+                <i class="bi bi-exclamation-circle-fill"></i>
+
+                Report Lost
+
+            </a>
+
+            <a href="/found" class="btn btn-success btn-lg">
+
+                <i class="bi bi-box-seam-fill"></i>
+
+                Report Found
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Statistics -->
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-exclamation-circle-fill"></i>
+
+                <h2>{{ lost_count }}</h2>
+
+                <p>Lost Reports</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-box-seam-fill"></i>
+
+                <h2>{{ found_count }}</h2>
+
+                <p>Found Reports</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-cpu-fill"></i>
+
+                <h2>{{ match_count }}</h2>
+
+                <p>AI Matches</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Main Features -->
+
+<div class="container mt-5 mb-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-3 col-md-4 mb-4">
+
+            <a href="/lost" class="feature-card">
+
+                <i class="bi bi-exclamation-triangle-fill"></i>
+
+                <h4 class="mt-3">
+                    Report Lost
+                </h4>
+
+                <p>
+
+                    Submit details of a lost item and let the system help identify
+                    possible matches.
+
+                </p>
+
+            </a>
+
+        </div>
+
+        <div class="col-lg-3 col-md-4 mb-4">
+
+            <a href="/found" class="feature-card">
+
+                <i class="bi bi-box-seam-fill"></i>
+
+                <h4 class="mt-3">
+                    Report Found
+                </h4>
+
+                <p>
+
+                    Upload details of an item you've found to help reunite it with
+                    its rightful owner.
+
+                </p>
+
+            </a>
+
+        </div>
+
+        <div class="col-lg-3 col-md-4 mb-4">
+
+            <a href="/search" class="feature-card">
+
+                <i class="bi bi-search"></i>
+
+                <h4 class="mt-3">
+                    Search Items
+                </h4>
+
+                <p>
+
+                    Search through reported lost and found items to locate possible
+                    matches.
+
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Records</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h1>Admin Dashboard</h1>
+</nav>
+
+<h2 style="text-align:center">
+    Lost Items
+</h2>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Item</th>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>Location</th>
+</tr>
+
+{% for i in lost %}
+
+<tr>
+
+    <td>{{ i[0] }}</td>
+
+    <td>
+
+    {% if i[7] %}
+    <img src="{{ url_for('static',
+    filename='uploads/' + i[7]) }}">
+    {% endif %}
+
+    </td>
+
+    <td>{{ i[3] }}</td>
+
+    <td>{{ i[1] }}</td>
+
+    <td>{{ i[2] }}</td>
+
+    <td>{{ i[5] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<h2 style="text-align:center">
+    Found Items
+</h2>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Item</th>
+    <th>Contact</th>
+    <th>Location</th>
+</tr>
+
+{% for i in found %}
+
+<tr>
+
+    <td>{{ i[0] }}</td>
+
+    <td>
+
+    {% if i[6] %}
+    <img src="{{ url_for('static',
+    filename='uploads/' + i[6]) }}">
+    {% endif %}
+
+    </td>
+
+    <td>{{ i[1] }}</td>
+
+    <td>{{ i[5] }}</td>
+
+    <td>{{ i[3] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
